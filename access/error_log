@@ -1,0 +1,1 @@
+[12-Jun-2019 15:46:13 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/multilaundry/public_html/lavanderia/access/inc/adodb5/drivers/adodb-mysqli.inc.php on line 124
