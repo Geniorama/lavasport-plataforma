@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --main-bg-color: rgba(0, 156, 222, 0.8);
+  --main-color: rgba(0, 156, 222, 0.8);
+}
+
+h1, h2, h3, h4{
+  font-weight: 700;
+
+}
+.logo{
+  max-width:255px ;
+}
+
+.bg-pinc{
+  background: var(--main-bg-color);
+}
+.tTcon{
+  width: 55px;
+}
+/* ARROWS */
+.arrowText {
+ position:relative;
+ margin: 0 auto;
+ width:30px;
+ background: rgba(248,249,250);
+ left: 0;
+ right: 0;
+
+}
+.arrowText:before, .arrowText:after {
+ content: " ";
+ position: absolute;
+ display: block;
+ width: 0;
+ height: 0;
+ top: 0;
+ margin: auto;
+}
+
+/* TOP ARROW */
+.arrowTop:before, .arrowTop:after {
+ border-left: 25px solid transparent;
+ border-right: 25px solid transparent;
+ left: 0;
+}
+.arrowTop:after {
+ border-bottom: 16px solid rgba(248,249,250);
+ top: -15px;
+ z-index: 2;
+}
+
+.arrowTop:before {
+ border-bottom: 16px solid rgba(248,249,250);
+ top: -16px;
+ z-index: 1;
+}
+.nav-link.active  .borderAzul {
+  border: 1px solid #33b0e5 !important;
+}
+.colorB{
+  color: var(--main-color);
+}
+.btnImpor:hover{
+  background: var(--main-bg-color);
+  color: #ffffff;
+  border: 0;
+}
+.btnImpor:hover .colorB{
+  color: #ffffff;
+}

@@ -11,39 +11,43 @@ class companiasModel {
 	function __destruct() {$this->db->close();}
 
 	public function cantidad(){
-		$sql="SELECT count(companias.id) as son FROM companias where organizacione_id=".$_SESSION['organizacione_id'];
+		$sql="SELECT count(companias.id) as son FROM companias";
 		$son=$this->db->Execute($sql);
 		return $son->fields["son"];
 	}
 
 	public function activos(){
 		$sql="
-			SELECT companias.*
+			SELECT companias.*, escuelas.nombre as escuelas_nombre
 			FROM companias
-			WHERE companias.estado=1 AND organizacione_id=".$_SESSION['organizacione_id'];
+			LEFT JOIN escuelas ON companias.escuela_id=escuelas.id
+			WHERE companias.estado=1";
 		return $this->db->Execute($sql);
 	}
 
 	public function inactivos(){
 		$sql="
-			SELECT companias.*
+			SELECT companias.*, escuelas.nombre as escuelas_nombre
 			FROM companias
-			WHERE companias.estado=0 AND organizacione_id=".$_SESSION['organizacione_id'];
+			LEFT JOIN escuelas ON companias.escuela_id=escuelas.id
+			WHERE companias.estado=0";
 		return $this->db->Execute($sql);
 	}
 
 	public function listar(){
 		$sql="
-			SELECT companias.*
+			SELECT companias.*, escuelas.nombre as escuelas_nombre
 			FROM companias
-			WHERE organizacione_id=".$_SESSION['organizacione_id'];
+			LEFT JOIN escuelas ON companias.escuela_id=escuelas.id
+			";
 		return $this->db->Execute($sql);
 	}
 
 	public function ver($id){
 		$sql="
-			SELECT companias.*
+			SELECT companias.*, escuelas.nombre as escuelas_nombre
 			FROM companias 
+			LEFT JOIN escuelas ON companias.escuela_id=escuelas.id
 			WHERE companias.id = ".$id;
 		return $this->db->Execute($sql);
 	}
@@ -52,12 +56,16 @@ class companiasModel {
 		$where="";
 		if(isset($llega["nombre"]) && $llega["nombre"]!="")
 			$where.="companias.nombre REGEXP '".$llega["nombre"]."' AND ";
+ 		if(isset($llega["escuela_id"]) && $llega["escuela_id"]!="")
+			$where.="companias.escuela_id REGEXP '".$llega["escuela_id"]."' AND ";
  
 		$sql="
-			SELECT companias.*
+			SELECT companias.*, escuelas.nombre as escuelas_nombre
 			FROM companias
+			LEFT JOIN escuelas ON companias.escuela_id=escuelas.id
 			
-			WHERE ".$where." organizacione_id=".$_SESSION['organizacione_id']."";
+			WHERE ".$where." 1
+			";
 		return $this->db->Execute($sql);
 	}
 
@@ -67,8 +75,9 @@ class companiasModel {
 
 	public function editar($id){
 		$sql="
-			SELECT companias.*
+			SELECT companias.*, escuelas.nombre as escuelas_nombre
 			FROM companias 
+			LEFT JOIN escuelas ON companias.escuela_id=escuelas.id
 			WHERE companias.id = ".$id;
 		return $this->db->Execute($sql);
 	}

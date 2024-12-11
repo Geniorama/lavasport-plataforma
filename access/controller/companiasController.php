@@ -7,11 +7,11 @@ class companiasController extends baseControl {
 	public function __construct(){
 		veraut();
 		include_once("model/companiasModel.php");$this->obj = new companiasModel();
-		include_once("model/organizacionesModel.php");
+		include_once("model/escuelasModel.php");
 	}
 
 	public function index(){
-		$organizacionobj = new organizacionesModel();$organizacion=$organizacionobj->listar();
+		$escuelasobj = new escuelasModel();$escuelas = $escuelasobj->listar();
 		if($this->obj->cantidad()<10001){$sale = $this->obj->listar();$msg=1;}else{$sale=new nada();$msg=2;}
 		include("view/_header.php");
 		include("view/companias_index.php");
@@ -26,7 +26,7 @@ class companiasController extends baseControl {
 	}
 
 	public function filtrar(){
-		$organizacionobj = new organizacionesModel();$organizacion=$organizacionobj->listar();
+		$escuelasobj = new escuelasModel();$escuelas = $escuelasobj->listar();
 		if(count($_POST)>0){
 			$llega = limpia2($_POST);
 			$sale = $this->obj->filtrar($llega);$msg=0;
@@ -39,6 +39,7 @@ class companiasController extends baseControl {
 	}
 
 	public function agregar(){
+		$escuelasobj = new escuelasModel();$escuelas = $escuelasobj->listar();
 		include("view/_header.php");
 		include("view/companias_agregar.php");
 		include("view/_footer.php");
@@ -47,19 +48,15 @@ class companiasController extends baseControl {
 	public function agregando(){
 
 		$entra = limpia2($_POST);
-		if(!isset($entra["organizacione_id"])){
-			$entra["organizacione_id"]=$_SESSION['organizacione_id'];
-		}
-		//$entra["creado"]=date("Y-m-d H:i:s");
+		$entra["creado"]=date("Y-m-d H:i:s");
 		$ret = $this->obj->agregando($entra);
 
 		$_SESSION["alertas"]=($ret)?iok().__("Se agrego la informacion"):ierror().__("Problema al agregar");
-		header("Location: ".PATO."companias/index/1");exit;
+		header("Location: ".PATO."companias/");exit;
 	}
 
 	public function editar(){
-		$organizacionobj = new organizacionesModel();$organizacion=$organizacionobj->listar();
-	
+		$escuelasobj = new escuelasModel();$escuelas = $escuelasobj->listar();
 		$sale = $this->obj->editar($this->valor[0]);
 		include("view/_header.php");
 		include("view/companias_editar.php");
@@ -69,10 +66,7 @@ class companiasController extends baseControl {
 	public function editando(){
 
 		$entra = limpia2($_POST);
-		if(!isset($entra["organizacione_id"])){
-			$entra["organizacione_id"]=$_SESSION['organizacione_id'];
-
-		}
+		$entra["editado"]=date("Y-m-d H:i:s");
 		$ret = $this->obj->editando($this->valor[0],$entra);
 		$_SESSION["alertas"]=($ret)?iok().__("Se actualizo la informacion"):ierror().__("Problema al editar");
 		header("Location: ".PATO."companias/");exit;
@@ -80,9 +74,8 @@ class companiasController extends baseControl {
 
 	public function eliminar(){
 		$ret = $this->obj->eliminar($this->valor[0]);
-		echo "ok";
-	//	$_SESSION["alertas"]=($ret)?iok().__("Se elimino correctamente"):ierror().__("Problema al eliminar");
-//		header("Location: ".PATO."companias/");exit;
+		$_SESSION["alertas"]=($ret)?iok().__("Se elimino correctamente"):ierror().__("Problema al eliminar");
+		header("Location: ".PATO."companias/");exit;
 	}
 
 	public function activar(){

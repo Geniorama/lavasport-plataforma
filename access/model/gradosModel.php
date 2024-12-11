@@ -11,7 +11,7 @@ class gradosModel {
 	function __destruct() {$this->db->close();}
 
 	public function cantidad(){
-		$sql="SELECT count(grados.id) as son FROM grados WHERE organizacione_id=".$_SESSION['organizacione_id'];
+		$sql="SELECT count(grados.id) as son FROM grados";
 		$son=$this->db->Execute($sql);
 		return $son->fields["son"];
 	}
@@ -20,7 +20,7 @@ class gradosModel {
 		$sql="
 			SELECT grados.*
 			FROM grados
-			WHERE grados.estado=1 AND organizacione_id=".$_SESSION['organizacione_id'];
+			WHERE grados.estado=1";
 		return $this->db->Execute($sql);
 	}
 
@@ -28,14 +28,15 @@ class gradosModel {
 		$sql="
 			SELECT grados.*
 			FROM grados
-			WHERE grados.estado=0 AND organizacione_id=".$_SESSION['organizacione_id'];
+			WHERE grados.estado=0";
 		return $this->db->Execute($sql);
 	}
 
 	public function listar(){
 		$sql="
 			SELECT grados.*
-			FROM grados WHERE organizacione_id=".$_SESSION['organizacione_id'];
+			FROM grados
+			";
 		return $this->db->Execute($sql);
 	}
 

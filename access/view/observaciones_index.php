@@ -4,7 +4,7 @@
     <section class="content-header">
       <h1>
         Observaciones
-        <small>Version 1.0</small>
+        <small>Versión 1.0</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -54,18 +54,7 @@
                 </div>
              
                  
-                  <div class="form-group">
-                  <label for="exampleInputPassword1">Organizacion</label>
-          <select  <?php if($_SESSION['perfil']!=1){ ?> disabled <?php } ?> name="organizacione_id" id="organizacione_id" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Organizaciones"); ?>" required>
-          <?php
-if(!$organizacion->EOF){
-	while(!$organizacion->EOF){ ?>
-    	<option value="<?php echo $organizacion->fields["id"]; ?>" <?php if($_SESSION['organizacione_id']==$organizacion->fields["id"]){ ?> selected <?php } ?>><?php echo $organizacion->fields["nombre"]; ?></option><?php
-		$organizacion->MoveNext();
-	}
-	$organizacion->Move(0);
-} ?></select>
-</div>
+      
               </div>
               <!-- /.box-body -->
 
@@ -73,6 +62,29 @@ if(!$organizacion->EOF){
                 <button type="submit" class="btn btn-primary">Agregar</button>
               </div>
             </form>
+            <div class="box-body">
+<form id="carga-agregando" name="carga-agregando" class="form-horizontal" method="post" action="<?php echo PATO; ?>admins/agregandomasivo/" enctype="multipart/form-data">
+
+   <div class="form-group">
+
+         <label for="exampleInputPassword1">Carga masiva (.csv)</label>         
+
+                <input type="file" id="archivo" placeholder="archivo" name="archivo" class="form-control">
+
+              </div>
+
+              <!-- /.form-group -->
+
+            
+
+              <div class="form-group">
+
+              <button type="submit" class="btn btn-primary">Cargar archivo CSV</button>
+
+</div>
+
+</form>
+</div>
             </div>
             <!-- /.box-body -->
           </div>

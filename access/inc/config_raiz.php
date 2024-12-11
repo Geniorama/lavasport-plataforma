@@ -1,24 +1,24 @@
 <?php
 $version = explode(".",phpversion());define("PHPVER",($version[0] * 10000 + $version[1] * 100 + $version[2]));
 
-if(preg_match("/multilaundry.com/i",$_SERVER["HTTP_HOST"])){
+if(preg_match("/lavasport/i",$_SERVER["HTTP_HOST"])){
 	define("MIURL","http://localhost");
 	define("MIURLS","https://localhost");
-	define("PATO","/lavanderia/");
-	define("PATU","/lavanderia/");
+	define("PATO","/lavasport/");
+	define("PATU","/lavasport/");
 }else{
 	define("MIURL","http://localhost");
 	define("MIURLS","https://localhost");
-	define("PATO","/lavanderia/");
-	define("PATU","/lavanderia/");
+	define("PATO","/lavasport/");
+	define("PATU","/lavasport/");
 }
 
 //   Varios
 define("PERFIL","usuarios");
 define("ROOT_PATH",$_SERVER["DOCUMENT_ROOT"]);
 define("RPP",10);
-define("JQUERY","/lavanderia/js/jquery-3.3.1.min.js");
-define("LOGO","/lavanderia/img/logo.png");
+define("JQUERY","/lavasport/js/jquery-3.3.1.min.js");
+define("LOGO","/lavasport/img/logo.png");
 define("PATA",ROOT_PATH.PATO);
 define("TEMP",PATA."73mp0r4l/");
 define("IDIOMA","esco"); // para ingles: enus, para español: esco
@@ -29,7 +29,7 @@ define("GOOGLE_CLAVE_SITIO","6LeCxBkUAAAAAKWjglj_jfcl9jA7YPyr_u8NpiX7");
 define("GOOGLE_CLAVE_SECRETA","6LeCxBkUAAAAAHASAfko4kADQl15U3qjCn6GFFhx");
 
 // Variables reutilizables
-define("TITULO","multilaundry.com");
+define("TITULO","lavasport");
 define("SEOKEYWORDS","programacion, php, javascript, sistemas de informacion, crestron, redes, wi-fi, domotica, electroica");
 define("SSEOKEYWORD","programacion, php, javascript, sistemas de informacion");
 define("SEODESCRIPT","ingenioSoft.com es una compañia internacional que esta a la banguardia de todas las tecnologias que estan cambiando el mundo.");
@@ -59,12 +59,12 @@ define("YOUR_SECRET", "8437e356e0c307777f91b0e411251e8e");
 define("FB_SCOPE","public_profile,email,user_birthday,user_location,user_photos");
 
 // Datos de Servidor de correo para envio de correos en general
-define("MAIL_SERVER","multilaundry.com");
+define("MAIL_SERVER","lavasport");
 define("MAIL_PORT","25");
 define("MAIL_AUTH",1);
 define("MAIL_USER","info@dominio.com");
 define("MAIL_PASS","asdf1234");
 define("MAIL_MAIL","info@dominio.com");
-define("MAIL_NAME","multilaundry.com");
+define("MAIL_NAME","lavasport");
 define("MAIL_LOGO",PATA."/img/logo.jpg");
 define("MAIL_LOGO_NAME","logo.jpg");

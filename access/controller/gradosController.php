@@ -7,12 +7,9 @@ class gradosController extends baseControl {
 	public function __construct(){
 		veraut();
 		include_once("model/gradosModel.php");$this->obj = new gradosModel();
-		include_once("model/organizacionesModel.php");
 	}
 
 	public function index(){
-		$organizacionesobj = new organizacionesModel();$organizacion = $organizacionesobj->listar();
-	
 		if($this->obj->cantidad()<10001){$sale = $this->obj->listar();$msg=1;}else{$sale=new nada();$msg=2;}
 		include("view/_header.php");
 		include("view/grados_index.php");
@@ -47,10 +44,7 @@ class gradosController extends baseControl {
 	public function agregando(){
 
 		$entra = limpia2($_POST);
-		if(!isset($entra["organizacione_id"])){
-			$entra["organizacione_id"]=$_SESSION['organizacione_id'];
-
-		}
+		$entra["creado"]=date("Y-m-d H:i:s");
 		$ret = $this->obj->agregando($entra);
 
 		$_SESSION["alertas"]=($ret)?iok().__("Se agrego la informacion"):ierror().__("Problema al agregar");
@@ -58,8 +52,6 @@ class gradosController extends baseControl {
 	}
 
 	public function editar(){
-		$organizacionesobj = new organizacionesModel();$organizacion = $organizacionesobj->listar();
-	
 		$sale = $this->obj->editar($this->valor[0]);
 		include("view/_header.php");
 		include("view/grados_editar.php");
@@ -69,10 +61,7 @@ class gradosController extends baseControl {
 	public function editando(){
 
 		$entra = limpia2($_POST);
-		if(!isset($entra["organizacione_id"])){
-			$entra["organizacione_id"]=$_SESSION['organizacione_id'];
-
-		}
+		$entra["editado"]=date("Y-m-d H:i:s");
 		$ret = $this->obj->editando($this->valor[0],$entra);
 		$_SESSION["alertas"]=($ret)?iok().__("Se actualizo la informacion"):ierror().__("Problema al editar");
 		header("Location: ".PATO."grados/");exit;
@@ -80,9 +69,8 @@ class gradosController extends baseControl {
 
 	public function eliminar(){
 		$ret = $this->obj->eliminar($this->valor[0]);
-		echo "ok";
-		//$_SESSION["alertas"]=($ret)?iok().__("Se elimino correctamente"):ierror().__("Problema al eliminar");
-		//header("Location: ".PATO."grados/");exit;
+		$_SESSION["alertas"]=($ret)?iok().__("Se elimino correctamente"):ierror().__("Problema al eliminar");
+		header("Location: ".PATO."grados/");exit;
 	}
 
 	public function activar(){

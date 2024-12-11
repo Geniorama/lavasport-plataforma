@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.esp {
+  display: block;
+  padding: 20px;
+}
+
+.logo {
+  display: block;
+  margin: 60px auto;
+}
+
+.tituLog {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  margin: 80px auto 25px;
+}
+
+.tituLog span {
+  color: #009cde;
+}
+
+.formLog {
+  padding: 10px 25px;
+  display: block;
+  margin: 0 auto;
+}
+
+.formLog .inp1 {
+  border-radius: 0;
+}
+
+.formLog .inp1::placeholder {
+  color: #b7c8cf;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.formLog label {
+  display: block;
+  cursor: pointer;
+  color: #000000;
+  position: relative;
+  padding: 5px 15px 5px 30px;
+  font-size: 14px;
+  border-radius: 0px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin: 25px auto;
+}
+
+.formLog label:before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  left: 0px;
+  border-radius: 0;
+  background: none;
+  border: 1px solid #D5DEE3;
+}
+
+.formLog .checkbox label:before {
+  border-radius: 0px;
+}
+
+.formLog .checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.formLog .checkbox input[type="checkbox"]:checked+label:before {
+  display: none;
+}
+
+.formLog .checkbox input[type="checkbox"]:checked+label {
+  background: #009CDE;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 0;
+  text-align: center;
+}
+
+.formLog .pLog {
+  display: block;
+  background: #D5DEE3;
+  /* color: #fff; */
+  padding: 30px;
+  /* text-align: center; */
+  /* font-size: 20px; */
+  font-weight: 300;
+  overflow-y: scroll;
+  height: 200px;
+}
+
+.formLog .btnlog {
+  background: #000;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.box-log {
+  background: #009CDE;
+  padding: 50px;
+  margin-top: 60px;
+}
+
+.tpasos {
+  color: #000;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.box-log .imgblue {
+  display: block;
+  margin: 5px auto;
+}
+
+.tblue {
+  text-align: center;
+  color: #fff;
+  padding: 8px;
+  margin: 10px auto;
+}
+
+.ancho {
+  padding: 0 80px;
+}
+
+.corre {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.corre span,
+.corre span a {
+  display: block;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19.5px;
+}
+
+.corre span a:hover {
+  text-decoration: none;
+}
+
+.cont p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  background: #000;
+  color: #fff;
+  padding: 8px 17px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.box2 {
+  background: #009CDE;
+  padding: 15px;
+}
+
+.boton {
+  display: block;
+  color: #000;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 5px auto;
+}
+
+.btn1 {
+  background: #009CDE;
+}
+
+.btn1:hover {
+  background: #B1C9D0;
+  text-decoration: none;
+  color: #009CDE;
+}
+
+.btn2 {
+  background: #C4D6DC;
+}
+
+.btn2:hover {
+  background: #0869C1;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn3 {
+  background: #B1C9D0;
+}
+
+.btn3:hover {
+  background: #009CDE;
+  text-decoration: none;
+  color: #fff;
+}
+
+
+@media (max-width: 767px) {
+  .esp {
+    display: block;
+    padding: 15px;
+  }
+
+  .tituLog {
+    font-size: 20px;
+  }
+
+  .formLog {
+    padding: 10px 5px;
+  }
+
+  .formLog label {
+    padding: 5px 15px 5px 30px;
+    font-size: 12px;
+    margin: 10px auto;
+  }
+
+  .formLog .checkbox input[type="checkbox"]:checked+label {
+    padding: 5px 7px;
+  }
+
+  .formLog .pLog {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .formLog .btnlog {
+    font-size: 12px;
+  }
+
+  /*====*/
+  .box-log {
+    padding: 30px 2px;
+    margin-top: 20px;
+  }
+
+  .tpasos {
+    font-size: 18px;
+  }
+
+  .tblue {
+    padding: 4px;
+    margin: 5px auto 50px;
+    font-size: 14px;
+  }
+
+  .ancho {
+    padding: 0 5px;
+  }
+
+  .corre {
+    font-size: 11px;
+  }
+
+  .corre span,
+  .corre span a {
+    font-size: 14px;
+  }
+
+  .cont p {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .cont br {
+    display: none;
+  }
+
+  .box2 {
+    padding: 1px;
+  }
+
+  .boton {
+    padding: 15px;
+    font-size: 12px;
+    margin: 5px auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .esp {
+    display: block;
+    padding: 15px;
+  }
+
+  /*====*/
+  .box-log {
+    padding: 30px 2px;
+    margin-top: 20px;
+  }
+
+  .tpasos {
+    font-size: 18px;
+  }
+
+  .tblue {
+    padding: 4px;
+    margin: 5px auto 50px;
+    font-size: 14px;
+  }
+
+  .ancho {
+    padding: 0 5px;
+  }
+
+  .corre {
+    font-size: 11px;
+  }
+
+  .ancho br {
+    display: none;
+  }
+
+  .corre span,
+  .corre span a {
+    font-size: 14px;
+  }
+
+  .cont p {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    padding: 8px;
+    text-align: center;
+  }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {}

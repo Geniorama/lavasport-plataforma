@@ -1,108 +1,406 @@
+ <!-- Content Wrapper. Contains page content -->
 
-<div>
-<h4><?php echo __("Usuarios"); ?> <span class="badge badge-primary"><?php if(isset($sale->_numOfRows)){echo $sale->_numOfRows;}else{echo "0";} ?></span></h4>
+ <div class="content-wrapper">
 
-<nav class="navbar navbar-default" role="navigation">
-<div class="navbar-header">
+   <!-- Content Header (Page header) -->
 
-<form action="<?php echo PATO; ?>usuarios/filtrar/" method="post" name="usuarios-filtrar" id="usuarios-filtrar" class="form-inline navbar-text">
-<div class="form-group">
+   <section class="content-header">
 
-<input id="old_id" name="old_id" placeholder="<?php echo __("Old"); ?>" type="text" value="<?php if(isset($_POST["old_id"]) && $_POST["old_id"]!=""){echo $_POST["old_id"];} ?>" class="form-control" onKeyPress="return notxt(event)" /><input id="constructora_id" name="constructora_id" placeholder="<?php echo __("Constructora"); ?>" type="text" value="<?php if(isset($_POST["constructora_id"]) && $_POST["constructora_id"]!=""){echo $_POST["constructora_id"];} ?>" class="form-control" onKeyPress="return notxt(event)" /><input id="inmobiliaria_id" name="inmobiliaria_id" placeholder="<?php echo __("Inmobiliaria"); ?>" type="text" value="<?php if(isset($_POST["inmobiliaria_id"]) && $_POST["inmobiliaria_id"]!=""){echo $_POST["inmobiliaria_id"];} ?>" class="form-control" onKeyPress="return notxt(event)" /><input id="email" name="email" placeholder="<?php echo __("Email"); ?>" type="text" value="<?php if(isset($_POST["email"]) && $_POST["email"]!=""){echo $_POST["email"];} ?>" class="form-control" /><input id="nombre" name="nombre" placeholder="<?php echo __("Nombre"); ?>" type="text" value="<?php if(isset($_POST["nombre"]) && $_POST["nombre"]!=""){echo $_POST["nombre"];} ?>" class="form-control" /><input id="departamento_id" name="departamento_id" placeholder="<?php echo __("Departamento"); ?>" type="text" value="<?php if(isset($_POST["departamento_id"]) && $_POST["departamento_id"]!=""){echo $_POST["departamento_id"];} ?>" class="form-control" onKeyPress="return notxt(event)" /><input id="ciudad_id" name="ciudad_id" placeholder="<?php echo __("Ciudad"); ?>" type="text" value="<?php if(isset($_POST["ciudad_id"]) && $_POST["ciudad_id"]!=""){echo $_POST["ciudad_id"];} ?>" class="form-control" onKeyPress="return notxt(event)" /><select name="estado" id="estado" class="custom-select">
-	<option value="-1"<?php if(!isset($_POST["estado"]) || $_POST["estado"]==-1){ ?> selected="selected"<?php } ?>><?php echo __("Seleccione Estado"); ?></option>
-	<option value="1"<?php if(isset($_POST["estado"]) && $_POST["estado"]==1){ ?> selected="selected"<?php } ?>><?php echo __("Activo"); ?></option>
-	<option value="0"<?php if(isset($_POST["estado"]) && $_POST["estado"]==0){ ?> selected="selected"<?php } ?>><?php echo __("Inactivo"); ?></option>
-</select><input id="biguser_id" name="biguser_id" placeholder="<?php echo __("Biguser"); ?>" type="text" value="<?php if(isset($_POST["biguser_id"]) && $_POST["biguser_id"]!=""){echo $_POST["biguser_id"];} ?>" class="form-control" onKeyPress="return notxt(event)" />
-<button type="submit" class="btn btn-primary form-control"><i class="fas fa-search"></i> <?php echo __("Buscar"); ?></button>
-</div>
+     <h1>
 
-</form>
+       Usuarios
 
-</div>
-</nav>
+       <small>versión 1.0</small>
 
-<?php if($sale->EOF){ ?><div class="row"><div class="col-12" align="left"><?php
-if($msg==1)echo __("No hay Usuarios");
-if($msg==2)echo __("Para ver resultados por favor filtre primero");
-?></div></div><?php }else{ ?>
-<div class="table-responsive"><table border="0" id="tb_sale_usuarios" class="table table-bordered table-striped table-hover table-condensed">
-<thead>
-	<tr class="hidden">
-		<th align="left" valign="top"><?php echo __("Old"); ?></th>
-		<th align="left" valign="top"><?php echo __("Constructora"); ?></th>
-		<th align="left" valign="top"><?php echo __("Inmobiliaria"); ?></th>
-		<th align="left" valign="top"><?php echo __("Email"); ?></th>
-		<th align="left" valign="top"><?php echo __("Nombre"); ?></th>
-		<th align="left" valign="top"><?php echo __("Departamento"); ?></th>
-		<th align="left" valign="top"><?php echo __("Ciudad"); ?></th>
-		<th align="left" valign="top"><?php echo __("Estado"); ?></th>
-		<th align="left" valign="top"><?php echo __("Biguser"); ?></th>
-		<th class="acciones" align="center" width="130"><?php echo __("Acciones"); ?></th>
-	</tr>
-</thead>
-<tbody><?php
-$j=1;$i=0;
-	while(!$sale->EOF){ ?>
-	<tr id="trtr<?php echo $sale->fields["id"]; ?>" itemscope itemtype="">
-		<td align="left" valign="top"><?php echo $sale->fields["old_id"]; ?></td>
-		<td align="left" valign="top"><?php echo $sale->fields["constructora_id"]; ?></td>
-		<td align="left" valign="top"><?php echo $sale->fields["inmobiliaria_id"]; ?></td>
-		<td align="left" valign="top"><?php echo $sale->fields["email"]; ?></td>
-		<td align="left" valign="top"><?php echo $sale->fields["nombre"]; ?></td>
-		<td align="left" valign="top"><?php echo $sale->fields["departamento_id"]; ?></td>
-		<td align="left" valign="top"><?php echo $sale->fields["ciudad_id"]; ?></td>
-		<td align="left" valign="top"><?php if($sale->fields["estado"]){echo __("Activo");}else{echo __("Inactivo");} ?></td>
-		<td align="left" valign="top"><?php echo $sale->fields["biguser_id"]; ?></td>
-		<td align="center" valign="top">
+     </h1>
 
-<a href="<?php echo PATO; ?>usuarios/ver/<?php echo $sale->fields["id"]; ?>/" data-toggle="tooltip" title="<?php echo __("Ver"); ?>" class="btn btn-default"><i class="fas fa-eye"></i></a>
+     <ol class="breadcrumb">
 
-<a href="<?php echo PATO; ?>usuarios/editar/<?php echo $sale->fields["id"]; ?>/" data-toggle="tooltip" title="<?php echo __("Editar"); ?>" class="btn btn-default"><i class="fas fa-edit"></i></a>
+       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-<?php if($sale->fields["estado"]==1){ ?>
-<a href="<?php echo PATO; ?>usuarios/desactivar/<?php echo $sale->fields["id"]; ?>/" data-toggle="tooltip" title="<?php echo __("Desactivar"); ?>" class="btn btn-default"><i class="fas fa-thumbs-o-down"></i></a><?php
-}else{
-?><a href="<?php echo PATO; ?>usuarios/activar/<?php echo $sale->fields["id"]; ?>/" data-toggle="tooltip" title="<?php echo __("Activar"); ?>" class="btn btn-default"><i class="fas fa-thumbs-o-up"></i></a><?php
-} ?>
+       <li class="active">Usuarios</li>
 
-<a href="JavaScript:;" onClick="eliminarusuarios(<?php echo $sale->fields["id"]; ?>)" data-toggle="tooltip" title="<?php echo __("Eliminar"); ?>" class="btn btn-default"><i class="fas fa-trash"></i></a>
+     </ol>
 
-        </td>
-	</tr><?php if($j==1){$j=2;}else{$j=1;}$sale->MoveNext();$i++;}$sale->Move(0); ?>
-</tbody></table></div>
+   </section>
 
 
-<div id="pager2" class="pager2 my-2 mx-0">
-<form class="form-inline">
-<div class="btn-group">
-	<button type="button" class="btn btn-default first"><i class="fas fa-fast-backward"></i></button>
-	<button type="button" class="btn btn-default prev"><i class="fas fa-backward"></i></button>
-	<button type="button" class="btn btn-default"><span class="pagedisplay">&nbsp;</span></button>
-	<button type="button" class="btn btn-default next"><i class="fas fa-forward"></i></button>
-	<button type="button" class="btn btn-default last"><i class="fas fa-fast-forward"></i></button>
-</div>
-<div class="form-group" data-placement="right" data-toggle="tooltip" title="<?php echo __("Registros por pagina"); ?>"><select id="rpp" class="custom-select pagesize"><option value="10">10</option><option value="20">20</option><option value="50">50</option><option value="100">100</option>
-</select></div>
-</form>
-</div>
 
-<script type="application/javascript">
-$(function(){
-	$("#rpp").val(<?php echo RPP; ?>);
-	$("#tb_sale_usuarios").tablesorter({headers: {9: {sorter: false}}, widgets: ["zebra"]});
-	$("#tb_sale_usuarios").tablesorterPager({container:$(".pager2"),ajaxUrl:null,output:"{startRow} <?php echo __("a"); ?> {endRow} <?php echo __("de un total de"); ?> {totalRows}",updateArrows:true,page:0,size:<?php echo RPP; ?>,fixedHeight:false,removeRows:true,cssNext:".next",cssPrev:".prev",cssFirst:".first",cssLast:".last",cssPageDisplay:".pagedisplay",cssPageSize:".pagesize",cssDisabled:"disabled"});
-});
-function eliminarusuarios(a){
-	confirma1('<?php echo iinterro().__("Esta seguro de eliminar Usuario?"); ?>','<?php echo __("Si"); ?>','eliminandousuarios',a)}
-function eliminandousuarios(a){window.location.href = "<?php echo PATO; ?>usuarios/eliminar/"+a+"/";}
-</script><?php } ?>
+   <!-- Main content -->
 
-<form class="form-inline">
+   <!-- Info boxes -->
 
-<div class="form-group"><button type="button" class="btn btn-primary form-control" onClick="location.href='<?php echo PATO; ?>usuarios/agregar/';"><i class="fas fa-plus"></i>&nbsp;&nbsp;<?php echo __("Nuevo"); ?></button></div>
+   <section class="content">
 
-<div class="form-group"><button type="button" class="btn btn-primary form-control" onClick="location.href='<?php echo PATO; ?>';"><i class="fas fa-home"></i>&nbsp;&nbsp;<?php echo __("Inicio"); ?></button></div>
+     <div class="row">
 
-</form>
-</div>
+       <div class="col-xs-12">
 
+         <div class="box">
+
+           <?php if (isset($this->valor[0]) && $this->valor[0] > 0) {
+
+            ?>
+
+             <div class="alert alert-info alert-dismissible">
+
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+
+               <h4><i class="icon fa fa-info"></i> Alerta!</h4>
+
+               EL usuario se agrego con exito
+
+             </div>
+
+
+
+           <?php
+
+
+
+            } ?>
+
+           <div class="box box-default collapsed-box">
+
+             <div class="box-header with-border">
+
+               <h3 class="box-title">Agregar Usuario</h3>
+
+
+
+               <div class="box-tools pull-right">
+
+                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+
+                 </button>
+
+               </div>
+
+               <!-- /.box-tools -->
+
+             </div>
+
+             <!-- /.box-header -->
+
+             <div class="box-body">
+
+               <form id="cupos-agregando" name="cupos-agregando" class="form-horizontal" method="post" action="<?php echo PATO; ?>usuarios/agregando/" enctype="multipart/form-data">
+
+                 <div class="box-body">
+
+
+
+                   <div class="form-group">
+
+                     <label for="exampleInputEmail1">Documento</label>
+
+                     <input type="text" class="form-control" name="documento" id="documento" placeholder="Documento" require>
+
+                   </div>
+
+                   <div class="form-group">
+
+                     <label for="exampleInputEmail1">Nombre</label>
+
+                     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" require>
+
+                   </div>
+
+                   <div class="form-group">
+
+                     <label for="exampleInputEmail1">Email</label>
+
+                     <input type="text" class="form-control" name="email" id="email" placeholder="Email" require>
+
+                   </div>
+                   <div class="form-group">
+
+                     <label for="exampleInputEmail1">Sexo</label>
+
+                     <select name="sexo" id="sexo" class="form-control">
+                       <option value="m">Masculino</option>
+                       <option value="f">Femenino</option>
+                     </select>
+                   </div>
+                   <div class="form-group">
+
+                     <label for="exampleInputEmail1">Fecha de Nacimiento</label>
+
+                     <input type="date" class="form-control" name="nacimiento" id="nacimiento" placeholder="Fecha de Nacimiento">
+
+                   </div>
+                   <div class="form-group">
+
+                     <label for="exampleInputEmail1">Celular</label>
+
+                     <input type="text" value="<?php echo $sale->fields["celular"]; ?>" class="form-control" name="celular" id="celular" placeholder="Telefono" require>
+
+                   </div>
+                   <div class="form-group">
+                     <label for="exampleInputEmail1">Sede</label><br>
+                     <select name="sede_id" disabled id="sede_id" class="form-control select2" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor seleccione la Sede"); ?>">
+                       <option value="0" selected="selected"><?php echo __("Seleccione Sede"); ?></option><?php
+                                                                                                          if (!$sedes->EOF) {
+                                                                                                            while (!$sedes->EOF) { ?>
+                           <option value="<?php echo $sedes->fields["id"]; ?>" <?php if ($sedes->fields["id"] == $_SESSION['sede']) {
+                                                                                                                echo "selected";
+                                                                                                              } ?>><?php echo $sedes->fields["nombre"]; ?></option><?php
+                                                                                                                                                                    $sedes->MoveNext();
+                                                                                                                                                                  }
+                                                                                                                                                                  $sedes->Move(0);
+                                                                                                                                                                } ?>
+                     </select>
+                   </div>
+                   <div class="form-group">
+
+                     <label for="exampleInputEmail1">Dirección</label>
+
+                     <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección">
+
+                   </div>
+
+                   <div class="form-group">
+                     <label for="exampleInputEmail1">Comentario</label>
+                     <input type="text" class="form-control" name="comentario" id="comentario" placeholder="Comentario">
+
+
+                   </div>
+                   <div class="form-group">
+
+                     <label for="exampleInputEmail1">Estado</label>
+
+                     <select name="estado" id="estado" class="form-control">
+                       <option value="1">Activo</option>
+                       <option value="0">Inactivo</option>
+                     </select>
+                   </div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                 <!-- /.box-body -->
+
+
+
+                 <div class="box-footer">
+
+                   <button type="submit" class="btn btn-primary">Agregar</button>
+
+                 </div>
+
+               </form>
+
+
+             </div>
+           </div>
+           <!-- /.box-body -->
+
+
+
+
+
+           <!-- /.box-header -->
+
+           <div class="box-body">
+
+             <table id="example2" class="table table-bordered table-hover">
+
+               <thead>
+
+                 <tr>
+
+
+                   <th>Documento</th>
+                   <th>Nombre</th>
+                   <th>Email</th>
+                   <th>Celular</th>
+                   <th>Sede</th>
+                   <th>Editar</th>
+                   <th>Eliminar</th>
+
+
+
+
+
+
+
+                 </tr>
+
+               </thead>
+
+               <tbody>
+
+                 <?php
+
+                  $j = 1;
+                  $i = 0;
+
+                  while (!$sale->EOF) { ?>
+
+                   <tr>
+
+
+                     <td><?php echo $sale->fields["documento"]; ?></td>
+                     <td><?php echo $sale->fields["nombre"]; ?></td>
+                     <td><?php echo $sale->fields["email"]; ?></td>
+                     <td><?php echo $sale->fields["celular"]; ?></td>
+                     <td><?php echo $sale->fields["sedes_nombre"]; ?></td>
+
+
+
+
+                     <td>
+
+                       <button type="button" onclick="editar(<?php echo $sale->fields["id"]; ?>)" class="btn btn-success btn-flat"><i class="fa fa-edit"></i> </button>
+
+                     </td>
+                     <td>
+                       <button type="button" onclick="borrarregistro(<?php echo $sale->fields["id"]; ?>)" class="btn btn-danger btn-flat"><i class="fa fa-trash"></i> </button>
+
+
+
+                     </td>
+
+
+
+                   </tr>
+
+                 <?php if ($j == 1) {
+                      $j = 2;
+                    } else {
+                      $j = 1;
+                    }
+                    $sale->MoveNext();
+                    $i++;
+                  }
+                  $sale->Move(0); ?>
+
+               </tbody>
+
+               <tfoot>
+
+
+                 <tr>
+
+
+
+                   <th>Documento</th>
+                   <th>Nombre</th>
+                   <th>Email</th>
+                   <th>Celular</th>
+                   <th>Sede</th>
+                   <th>Editar</th>
+                   <th>Eliminar</th>
+
+
+
+
+
+
+
+                 </tr>
+
+
+               </tfoot>
+
+             </table>
+
+           </div>
+
+           <!-- /.box-body -->
+
+         </div>
+
+         <!-- /.box -->
+
+         <script>
+           function editar(id) {
+
+             window.location.href = "<?php echo PATO; ?>usuarios/editar/" + id;
+
+
+
+           }
+
+
+
+
+           function borrarregistro(id) {
+
+             if (confirm("Realmente Desea eliminar el Usuario?")) {
+
+               $("#carga").show();
+
+               $.ajax({
+                 type: "POST",
+                 url: "<?php echo PATO; ?>usuarios/eliminar/" + id + "",
+                 data: "ok=1",
+
+
+
+
+
+                 success: function(datos) {
+
+                   $("#carga").hide();
+
+
+                   //alert("eliminado con exito");
+
+                   window.location.reload();
+
+
+                   //$("#carga").hide();
+
+                   //$("#ubicacion1").html(datos);
+
+
+
+                 }
+
+
+
+
+
+               });
+
+             }
+
+
+
+           }
+
+           $(function() {
+
+             $('.select2').select2();
+
+             $('#example1').DataTable()
+
+             $('#example2').DataTable({
+
+               'paging': true,
+
+               'lengthChange': false,
+
+               'searching': true,
+
+               'ordering': true,
+
+               'info': true,
+
+               'autoWidth': false,
+               'pageLength': 100,
+
+             })
+
+           })
+         </script>

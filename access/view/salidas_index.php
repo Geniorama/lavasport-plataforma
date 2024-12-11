@@ -1,4 +1,89 @@
-  <!-- Content Wrapper. Contains page content -->
+ <style>
+   .signature-pad {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+  max-width: 700px;
+  max-height: 460px;
+  border: 1px solid #e8e8e8;
+  background-color: #3c8dbc;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.08) inset;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.signature-pad::before,
+.signature-pad::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  width: 40%;
+  height: 10px;
+  bottom: 10px;
+  background: transparent;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.signature-pad::before {
+  left: 20px;
+  -webkit-transform: skew(-3deg) rotate(-3deg);
+          transform: skew(-3deg) rotate(-3deg);
+}
+
+.signature-pad::after {
+  right: 20px;
+  -webkit-transform: skew(3deg) rotate(3deg);
+          transform: skew(3deg) rotate(3deg);
+}
+
+.signature-pad--body {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: 1px solid #f4f4f4;
+}
+
+.signature-pad--body
+canvas {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #000 inset;
+}
+
+.signature-pad--footer {
+  color: #C3C3C3;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 8px;
+}
+
+.signature-pad--actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 8px;
+}
+input[type=checkbox] {
+    transform: scale(2);
+}
+   </style>
+ <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -137,49 +222,9 @@
 
             <!-- /.col -->
           </div>
-          <div class="row">
-            <div class="col-mb-12">
-            <hr style="color: #0056b2;" />
-          </div>
-</div>
+     
           <!-- /.row -->
-          <div class="row">
-            <div class="col-md-4">
-            <div class="form-group">
-			
-     <textarea name="comentario" id="comentario" placeholder="Comentario" class="form-control" style="width: 100%;"></textarea>
-     
-     
-     
-              <!-- /.form-group -->
-            </div>
-</div>
-
-            <div class="col-md-4">
-            <div class="form-group">
-			
-      <textarea name="comentario" id="comentario" placeholder="Firma" class="form-control" style="width: 100%;"></textarea>
-      
-      
-      
-               <!-- /.form-group -->
-             </div>
-</div>
-            <!-- /.col -->
-            <div class="col-md-4">
-            <div class="form-group">
-			
-            <div align="center" class='starrr'></div>
-      
-      
-               <!-- /.form-group -->
-             </div>
-</div>
-     
-		
-
-            <!-- /.col -->
-          </div>
+ 
           <!-- /.row -->
 
             <!-- /.col -->
@@ -211,18 +256,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-          <div class="box-header">
-              <h3 class="box-title">Detalle</h3>
-
-              <div class="box-tools">
-                <div class="input-group input-group" style="width: 150px;">
-                 
-                  <div class="input-group-btn">
-                    <button type="button" onclick="generarOrden()" class="btn btn-primary">RECIBÍ A CONFORMIDAD LAS PRENDAS SELECCIONADAS:</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding" id="datatable1">
             <table class="table table-hover">
@@ -250,6 +284,109 @@
           <!-- /.box -->
         </div>
       </div>
+
+
+
+     <!-- Small boxes (Stat box) -->
+           <div class="row">
+        <div class="col-xs-12">
+          <!-- small box -->
+		  <div class="box box-default">
+        
+        <!-- /.box-header -->
+       
+        <div class="box-body">
+         
+          <!-- /.row -->
+      
+        
+          <!-- /.row -->
+          <div class="row">
+          <!--  <div class="col-md-6">
+            <div class="form-group">
+			
+     <textarea name="comentario" id="comentario" placeholder="Comentario" class="form-control" style="width: 100%;"></textarea>
+     
+     
+     
+            
+            </div>
+</div> -->
+
+            <div class="col-md-12">
+            <div class="form-group">
+            <div id="signature-pad" class="signature-pad">
+    <div class="signature-pad--body">
+      <canvas></canvas>
+    </div>
+    <div class="signature-pad--footer">
+      <div class="description">Firma</div>
+
+      <div class="signature-pad--actions">
+        <div>
+          <button type="button" class="button clear" data-action="clear">Limpiar</button>
+          <button type="button" class="button" data-action="change-color">Cambiar color</button>
+          <button type="button" class="button" data-action="undo">Volver</button>
+
+        </div>
+       
+      </div>
+    </div>
+  </div>
+      
+               <!-- /.form-group -->
+             </div>
+</div>
+            <!-- /.col -->
+            
+		
+
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+          <div class="row">
+            <div class="col-mb-6">
+            <div class="form-group">
+			
+            <h1>&nbsp;<span class="label label-default">Calificación: <div align="center" class='starrr'></div></span></h1> 
+
+
+         <!-- /.form-group -->
+       </div>
+          </div>
+          <div class="col-mb-6">
+             <div class="form-group">
+             &nbsp; <button type="button" id="salida1" onclick="salida()" class="btn btn-primary">RECIBÍ A CONFORMIDAD LAS PRENDAS SELECCIONADAS</button>
+               
+            </div>
+             </div>
+             
+             <input type="hidden" name="comentario" value="" id="comentario">
+             <input type="hidden" name="calificacion" value="1" id="calificacion">
+</form> 
+</div>
+            <!-- /.col -->
+            
+          </div>
+          <!-- /.row -->
+
+
+
+        </div>
+        <!-- /.box-body -->
+        
+      </div>
+      <!-- /.box -->
+     
+       
+       
+      
+      </div>
+      <!-- /.row -->
+
+
+
+
         </div>
         <!-- /.col -->
       </div>
@@ -262,16 +399,28 @@
 
   <script>
 
-$('.starrr').starrr();
 
-document.onkeyup = function(e) {
 
-  if (e.ctrlKey && e.which == 66) {
-    //alert("Ctrl + B shortcut combination was pressed");
-    generarOrden();
-  }
+  function cambiarchecks(){
   
-};
+    if ($("#call2").is(':checked')) {
+        //$("input[type=checkbox]").prop('checked', true); //todos los check
+        $("#c11 input[type=checkbox]").prop('checked', true); //solo los del objeto #diasHabilitados
+    } else {
+        //$("input[type=checkbox]").prop('checked', false);//todos los check
+        $("#c11 input[type=checkbox]").prop('checked', false);//solo los del objeto #diasHabilitados
+    }
+  }
+
+
+$('.starrr').starrr({
+      max: 5,
+    //  rating: 3,
+      change: function(e, value){
+       $("#calificacion").val(value).trigger('input');
+      
+      }
+    });
 
 
 function vercomentario(){
@@ -316,8 +465,20 @@ $("#recibidopor").html("<strong>Recibido Por: </strong>"+arr[8]);
 $("#estado").html(arr[9]);
 $("#tipoorden").html("<strong>Tipo de Orden: </strong>"+arr[10]);
 
+if(arr[10]=='cupo'){
+tipo=2;
 
-$.ajax({type: "POST",url: "<?php echo PATO; ?>productocupos/verprodorden/"+$("#orden").val(),data: "ok=1",
+}else{
+tipo=1;
+
+}
+if(arr[11]>0){
+descuento=arr[11];
+}else{
+
+  descuento=0;
+}
+$.ajax({type: "POST",url: "<?php echo PATO; ?>productocupos/verprodorden/"+$("#orden").val(),data: "descuento="+descuento+"&tipo="+tipo,
 
 
 success: function(datos){
@@ -348,13 +509,48 @@ $("#carga").hide();
 	  }
 
    
+    function abonar(){
+  $.ajax({type: "POST",url: "<?php echo PATO; ?>productocupos/abonarvalorpendiente/",data: "ordene_id="+$("#orden").val()+"&valor="+$("#abono").val(),
 
+
+success: function(datos){
+
+
+alert("abono exitoso");
+window.location.reload();
+}
+
+
+});
+
+}
 
    
 
 
 
+function salida(){
+  $("#carga").show();
 
+
+
+
+  $.ajax({type: "POST",url: "<?php echo PATO; ?>productocupos/salida/"+$("#orden").val(),data: $("#datos11").serialize()+"&comentario="+$("#comentario").val()+"&calificacion="+$("#calificacion").val(),
+
+
+success: function(datos){
+ guardar();
+$("#carga").hide();
+
+
+}
+
+
+});
+
+}
 
  
-	  </script>
+    </script>
+<script src="<?php echo PATU; ?>js/signature_pad.umd.js"></script>
+<script src="<?php echo PATU; ?>js/app.js"></script>

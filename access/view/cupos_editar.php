@@ -12,6 +12,36 @@
 <label for="nombre" class="col-3"><?php echo __("Nombre"); ?></label>
 <div class="col-7"><input id="nombre" name="nombre" type="text" value="<?php echo $sale->fields["nombre"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Nombre"); ?>" required /></div>
 </div>
+<div class="form-group">
+                  <label for="exampleInputEmail1">Inicio</label>
+                  <input type="date" class="form-control" name="inicio" id="inicio" value="<?php echo $sale->fields["inicio"]; ?>" placeholder="Inicio">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Fin</label>
+                  <input type="date" class="form-control" name="fin" id="fin" value="<?php echo $sale->fields["fin"]; ?>" placeholder="Fin">
+                </div>
+                <div class="form-group">
+                <label>límite de pago:</label>
+
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="date" value="<?php echo $sale->fields["fecha_limite"]; ?>" id="fecha_limite" name="fecha_limite"  class="form-control"  data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                               </div>
+                <!-- /.input group -->
+        </div>
+        <div class="form-group">
+                <label>Interes mensual por mora:</label>
+
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-percent"></i>
+                  </div>
+                  <input type="number" value="<?php echo $sale->fields["interes"]; ?>" id="interes" name="interes"  class="form-control" data-placeholder="Interes mensual">
+                                   </div>
+                <!-- /.input group -->
+        </div>
 
 
 <div class="form-group row">
@@ -23,7 +53,7 @@
 <div class="col-7"><input id="num_recibidos" name="num_recibidos" type="text" value="<?php echo $sale->fields["num_recibidos"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el numero de entregas mensuales"); ?>" required /></div>
 </div>
 <div class="form-group row">
-<label for="grm_asignados" class="col-3"><?php echo __("Dias Promesa de Entrega"); ?></label>
+<label for="grm_asignados" class="col-3"><?php echo __("Días Promesa de Entrega"); ?></label>
 <div class="col-7"><input id="dias" name="dias" type="text" value="<?php echo $sale->fields["dias"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el numero de entregas mensuales"); ?>" required /></div>
 </div>
 <div class="form-group row">

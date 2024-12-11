@@ -3,7 +3,7 @@
     <section class="content-header">
       <h1>
         Editar Observación
-        <small>Version 1.0</small>
+        <small>Versiòn 1.0</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -42,18 +42,7 @@
                 </div>
                
                  
-                  <div class="form-group">
-                  <label for="exampleInputPassword1">Organizacion</label>
-          <select  <?php if($_SESSION['perfil']!=1){ ?> disabled <?php } ?> name="organizacione_id" id="organizacione_id" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Organizaciones"); ?>" required>
-          <?php
-if(!$organizacion->EOF){
-	while(!$organizacion->EOF){ ?>
-    	<option value="<?php echo $organizacion->fields["id"]; ?>" <?php if($_SESSION['organizacione_id']==$organizacion->fields["id"]){ ?> selected <?php } ?>><?php echo $organizacion->fields["nombre"]; ?></option><?php
-		$organizacion->MoveNext();
-	}
-	$organizacion->Move(0);
-} ?></select>
-</div>
+
               </div>
               <!-- /.box-body -->
 

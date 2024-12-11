@@ -1,185 +1,188 @@
-<h4><?php echo __("Editar Usuario"); ?></h4>
+<div class="content-wrapper">
 
-<form id="usuarios-editando" name="usuarios-editando" class="form-horizontal" method="post" action="<?php echo PATO; ?>usuarios/editando/<?php echo $this->valor[0]; ?>/" enctype="multipart/form-data">
+  <!-- Content Header (Page header) -->
 
-<div class="row"><div class="col-12">&nbsp;</div></div>
+  <section class="content-header">
 
-<div class="row">
-	<div class="col-12">
+    <h1>
 
+      Editar Usuario
 
-<div class="form-group row">
-<label for="old_id" class="col-3"><?php echo __("Old"); ?></label>
-<div class="col-7"><input id="old_id" name="old_id" type="text" value="<?php echo $sale->fields["old_id"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba la Old"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
+      <small>Versión 1.0</small>
 
+    </h1>
 
-<div class="form-group row">
-<label for="constructora_id" class="col-3"><?php echo __("Constructora"); ?></label>
-<div class="col-7"><input id="constructora_id" name="constructora_id" type="text" value="<?php echo $sale->fields["constructora_id"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba la Constructora"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
+    <ol class="breadcrumb">
 
+      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-<div class="form-group row">
-<label for="inmobiliaria_id" class="col-3"><?php echo __("Inmobiliaria"); ?></label>
-<div class="col-7"><input id="inmobiliaria_id" name="inmobiliaria_id" type="text" value="<?php echo $sale->fields["inmobiliaria_id"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba la Inmobiliaria"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
+      <li class="active">Editar Usuario</li>
+
+    </ol>
+
+  </section>
 
 
-<div class="form-group row">
-<label for="email" class="col-3"><?php echo __("Email"); ?></label>
-<div class="col-7"><input id="email" name="email" type="text" value="<?php echo $sale->fields["email"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Email"); ?>" /></div>
-</div>
+
+  <!-- Main content -->
+
+  <!-- Info boxes -->
+
+  <section class="content">
+
+    <div class="row">
+
+      <div class="col-xs-12">
+
+        <div class="box">
 
 
-<div class="form-group row">
-<label for="clave" class="col-3"><?php echo __("Clave"); ?></label>
-<div class="col-7"><input id="clave" name="clave" type="text" value="<?php echo $sale->fields["clave"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Clave"); ?>" /></div>
-</div>
+
+          <div class="box">
+
+            <div class="box-header with-border">
+
+              <h3 class="box-title">Editar Usuario</h3>
 
 
-<div class="form-group row">
-<label for="drupal" class="col-3"><?php echo __("Drupal"); ?></label>
-<div class="col-7"><input id="drupal" name="drupal" type="text" value="<?php echo $sale->fields["drupal"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Drupal"); ?>" /></div>
-</div>
+
+              <div class="box-tools pull-right">
+
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+
+                </button>
+
+              </div>
+
+              <!-- /.box-tools -->
+
+            </div>
+
+            <!-- /.box-header -->
+
+            <div class="box-body">
+
+              <form id="admins-editando" name="admins-editando" class="form-horizontal" method="post" action="<?php echo PATO; ?>usuarios/editando/<?php echo $this->valor[0]; ?>/" enctype="multipart/form-data">
+
+                <div class="box-body">
 
 
-<div class="form-group row">
-<label for="nombre" class="col-3"><?php echo __("Nombre"); ?></label>
-<div class="col-7"><input id="nombre" name="nombre" type="text" value="<?php echo $sale->fields["nombre"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Nombre"); ?>" /></div>
-</div>
+                  <div class="form-group">
+
+                    <label for="exampleInputEmail1">Documento</label>
+
+                    <input type="text" class="form-control" value="<?php echo $sale->fields["documento"]; ?>" name="documento" id="documento" placeholder="Documento" require>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="exampleInputEmail1">Nombre</label>
+
+                    <input type="text" class="form-control" value="<?php echo $sale->fields["nombre"]; ?>" name="nombre" id="nombre" placeholder="Nombre" require>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="exampleInputEmail1">Email</label>
+
+                    <input type="text" value="<?php echo $sale->fields["email"]; ?>" class="form-control" name="email" id="email" placeholder="Email" require>
+
+                  </div>
+                  <div class="form-group">
+
+                    <label for="exampleInputEmail1">Sexo</label>
+
+                    <select name="sexo" id="sexo" class="form-control">
+                      <option value="m" <?php if ($sale->fields["sexo"] == "m") {
+                                          echo "selected";
+                                        } ?>>Masculino</option>
+                      <option value="f" <?php if ($sale->fields["sexo"] == "f") {
+                                          echo "selected";
+                                        } ?>>Femenino</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+
+                    <label for="exampleInputEmail1">Fecha de Nacimiento</label>
+
+                    <input type="date" value="<?php echo $sale->fields["nacimiento"]; ?>" class="form-control" name="nacimiento" id="nacimiento" placeholder="Fecha de Nacimiento" require>
+
+                  </div>
+                  <div class="form-group">
+
+                    <label for="exampleInputEmail1">Celular</label>
+
+                    <input type="text" value="<?php echo $sale->fields["celular"]; ?>" class="form-control" name="celular" id="celular" placeholder="Telefono" require>
+
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Sede</label>
+                    <select name="sede_id" disabled id="sede_id" class="form-control select2" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor seleccione la Sede"); ?>">
+                      <option value="0" selected="selected"><?php echo __("Seleccione Sede"); ?></option><?php
+                                                                                                          if (!$sedes->EOF) {
+                                                                                                            while (!$sedes->EOF) { ?>
+                          <option value="<?php echo $sedes->fields["id"]; ?>" <?php if ($sale->fields["sede_id"] == $sedes->fields["id"]) { ?> selected <?php } ?>><?php echo $sedes->fields["nombre"]; ?></option><?php
+                                                                                                                                                                                                                    $sedes->MoveNext();
+                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                  $sedes->Move(0);
+                                                                                                                                                                                                                } ?>
+                    </select>
+                  </div>
+                  <div class="form-group">
+
+                    <label for="exampleInputEmail1">Dirección</label>
+
+                    <input type="text" class="form-control" value="<?php echo $sale->fields["direccion"]; ?>" name="direccion" id="direccion" placeholder="Dirección" require>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Comentario</label>
+                    <input type="text" class="form-control" value="<?php echo $sale->fields["comentario"]; ?>" name="comentario" id="comentario" placeholder="Comentario" require>
 
 
-<div class="form-group row">
-<label for="apellidos" class="col-3"><?php echo __("Apellidos"); ?></label>
-<div class="col-7"><input id="apellidos" name="apellidos" type="text" value="<?php echo $sale->fields["apellidos"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Apellidos"); ?>" /></div>
-</div>
+                  </div>
+                  <div class="form-group">
+
+                    <label for="exampleInputEmail1">Estado</label>
+
+                    <select name="estado" id="estado" class="form-control">
+                      <option value="1" <?php if ($sale->fields["estado"] == 1) {
+                                          echo "selected";
+                                        } ?>>Activo</option>
+                      <option value="0" <?php if ($sale->fields["estado"] == 0) {
+                                          echo "selected";
+                                        } ?>>Inactivo</option>
+                    </select>
+                  </div>
+                </div>
 
 
-<div class="form-group row">
-<label for="tdocumento" class="col-3"><?php echo __("Tdocumento"); ?></label>
-<div class="col-7"><select name="tdocumento" id="tdocumento" class="custom-select" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor seleccione el Tdocumento"); ?>" required>
-		<option value="0"<?php if(!$sale->fields["tdocumento"]){ ?> selected="selected"<?php } ?>><?php echo __("Seleccione Tdocumento"); ?></option>
-		<option value="1"<?php if($sale->fields["tdocumento"]==1){ ?> selected="selected"<?php } ?>><?php echo __("NIT"); ?></option>
-		<option value="2"<?php if($sale->fields["tdocumento"]==2){ ?> selected="selected"<?php } ?>><?php echo __("CC"); ?></option>
-		<option value="3"<?php if($sale->fields["tdocumento"]==3){ ?> selected="selected"<?php } ?>><?php echo __("CE"); ?></option>
-		<option value="4"<?php if($sale->fields["tdocumento"]==4){ ?> selected="selected"<?php } ?>><?php echo __("Pasaporte"); ?></option>
-				</select></div>
-</div>
+
+            </div>
+
+            <!-- /.box-body -->
 
 
-<div class="form-group row">
-<label for="documento" class="col-3"><?php echo __("Documento"); ?></label>
-<div class="col-7"><input id="documento" name="documento" type="text" value="<?php echo $sale->fields["documento"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Documento"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
+
+            <div class="box-footer">
+
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" onClick="window.history.back();">&nbsp;&nbsp;<?php echo __("Volver"); ?></button>
 
 
-<div class="form-group row">
-<label for="telefono" class="col-3"><?php echo __("Teléfono"); ?></label>
-<div class="col-7"><input id="telefono" name="telefono" type="text" value="<?php echo $sale->fields["telefono"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Teléfono"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
+              <!--		<button type="button" class="btn btn-secondary" onClick="window.history.back();">&nbsp;&nbsp;<?php echo __("Volver"); ?></button> -->
 
 
-<div class="form-group row">
-<label for="celular" class="col-3"><?php echo __("Celular"); ?></label>
-<div class="col-7"><input id="celular" name="celular" type="text" value="<?php echo $sale->fields["celular"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Celular"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
 
+            </div>
 
-<div class="form-group row">
-<label for="celular2" class="col-3"><?php echo __("Celular2"); ?></label>
-<div class="col-7"><input id="celular2" name="celular2" type="text" value="<?php echo $sale->fields["celular2"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Celular2"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
+            </form>
 
+          </div>
 
-<div class="form-group row">
-<label for="departamento_id" class="col-3"><?php echo __("Departamento"); ?></label>
-<div class="col-7"><input id="departamento_id" name="departamento_id" type="text" value="<?php echo $sale->fields["departamento_id"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Departamento"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
+          <!-- /.box-body -->
 
-
-<div class="form-group row">
-<label for="ciudad_id" class="col-3"><?php echo __("Ciudad"); ?></label>
-<div class="col-7"><input id="ciudad_id" name="ciudad_id" type="text" value="<?php echo $sale->fields["ciudad_id"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba la Ciudad"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
-
-
-<div class="form-group row">
-<label for="direccion" class="col-3"><?php echo __("Dirección"); ?></label>
-<div class="col-7"><input id="direccion" name="direccion" type="text" value="<?php echo $sale->fields["direccion"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Dirección"); ?>" /></div>
-</div>
-
-
-<div class="form-group row">
-<label for="resena" class="col-3"><?php echo __("Resena"); ?></label>
-<div class="col-7"><input id="resena" name="resena" type="text" value="<?php echo $sale->fields["resena"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba la Resena"); ?>" /></div>
-</div>
-
-
-<div class="form-group row">
-<label for="web" class="col-3"><?php echo __("Web"); ?></label>
-<div class="col-7"><input id="web" name="web" type="text" value="<?php echo $sale->fields["web"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Web"); ?>" /></div>
-</div>
-
-
-<div class="form-group row">
-<label for="img" class="col-3"><?php echo __("Img"); ?></label>
-<div class="col-7"><input id="img" name="img" type="text" value="<?php echo $sale->fields["img"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Img"); ?>" /></div>
-</div>
-
-
-<div class="form-group row">
-<label for="origname" class="col-3"><?php echo __("Origname"); ?></label>
-<div class="col-7"><input id="origname" name="origname" type="text" value="<?php echo $sale->fields["origname"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Origname"); ?>" /></div>
-</div>
-
-
-<div class="form-group row">
-<label for="estado" class="col-3"><?php echo __("Estado"); ?></label>
-<div class="col-7"><select name="estado" id="estado" class="custom-select" required>
-			<option value="1"<?php if($sale->fields["estado"]) { ?> selected="selected"<?php } ?>><?php echo __("Activo"); ?></option>
-			<option value="0"<?php if(!$sale->fields["estado"]){ ?> selected="selected"<?php } ?>><?php echo __("Inactivo"); ?></option>
-		</select></div>
-</div>
-
-
-<div class="form-group row">
-<label for="login" class="col-3"><?php echo __("Login"); ?></label>
-<div class="col-7"><input id="login" name="login" type="text" value="<?php echo $sale->fields["login"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Login"); ?>" /></div>
-</div>
-
-
-<div class="form-group row">
-<label for="biguser_id" class="col-3"><?php echo __("Biguser"); ?></label>
-<div class="col-7"><input id="biguser_id" name="biguser_id" type="text" value="<?php echo $sale->fields["biguser_id"]; ?>" class="form-control" data-placement="right" data-original-title="<?php echo __("Dato requerido"); ?>" data-content="<?php echo __("Por favor escriba el Biguser"); ?>" onKeyPress="return notxt(event)" /></div>
-</div>
-
-
-<div class="form-group row">
-	<div class="col-3"><button type="button" class="btn btn-secondary btn-block mt-2" onClick="window.history.back();"><i class="fas fa-chevron-left"></i>&nbsp;&nbsp;<?php echo __("Volver"); ?></button></div>
-	<div class="col-5"><button type="submit" class="btn btn-primary btn-block mt-2" data-loading-text="Verificando..."><i class="fas fa-save"></i>&nbsp;&nbsp;<?php echo __("Guardar"); ?></button></div>
-</div>
-
-	</div>
-</div>
-
-</form>
-
-<script type="application/javascript">
-var pavem=0;
-$(function(){
-	
-	$("#usuarios-editando").submit(function(){
-		var err=0;$(".has-error").removeClass("has-error");$(".popover").hide();$("[type=submit]").button("loading");
-
-
-		if($("#tdocumento").val()==""){
-			if(err==0)$("#tdocumento").focus();err++;$("#tdocumento").addClass("has-error").popover("show").parent("div").addClass("has-error");}
-
-		if($("#estado").val()==""){
-			if(err==0)$("#estado").focus();err++;$("#estado").addClass("has-error").popover("show").parent("div").addClass("has-error");}
-
-		if(err==0){return true;}else{$("[type=submit]").button("reset");return false;}
-	});
-});
-</script>
+        </div>
