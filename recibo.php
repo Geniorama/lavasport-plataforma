@@ -379,7 +379,19 @@ class recibo
   background-color: #00bd24;
   color: white;
   border-color: #00bd24;
-}     </style>
+}  
+
+.logo-bank{
+    max-width: 150px;
+}
+
+@media screen and (max-width: 1440px) {
+    .logo-bank{
+        max-width: 100px;
+    }
+}
+
+</style>
         </head>
 
         <body>
@@ -404,7 +416,7 @@ class recibo
             </div>
             <div id="menuprint">
                 <div class="box2">
-                    <img src="assets/img/logo2.png" class="img-fluid logo" alt="Responsive image">
+                    <img src="assets/img/logo2.png" class="img-fluid logo-bank logo" alt="Responsive image">
                 </div>
 
 <div class="container mt-3">
@@ -439,21 +451,21 @@ class recibo
                                 <?php if ($data->fields["banco1"] > 0) { ?>
                                     <div class="col">
 
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img class="img-fluid" style="max-width: 150px;" src="access/img/bancos/<?php echo $data->fields["banco1"] ?>foto.jpg" data-holder-rendered="true" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img class="img-fluid logo-bank" src="access/img/bancos/<?php echo $data->fields["banco1"] ?>foto.jpg" data-holder-rendered="true" />
 
                                     </div>
                                 <?php } ?>
                                 <?php if ($data->fields["banco2"] > 0) { ?>
                                     <div class="col">
 
-                                        <img src="access/img/bancos/<?php echo $data->fields["banco2"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                        <img src="access/img/bancos/<?php echo $data->fields["banco2"] ?>foto.jpg" class="img-fluid logo-bank" data-holder-rendered="true" />
 
                                     </div>
                                 <?php } ?>
                                 <?php if ($data->fields["banco3"] > 0) { ?>
                                     <div class="col">
 
-                                        <img src="access/img/bancos/<?php echo $data->fields["banco3"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                        <img src="access/img/bancos/<?php echo $data->fields["banco3"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                     </div>
                                 <?php } ?>
@@ -461,20 +473,20 @@ class recibo
                                 <?php if ($data->fields["banco4"] > 0) { ?>
                                     <div class="col">
 
-                                        <img src="access/img/bancos/<?php echo $data->fields["banco4"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                        <img src="access/img/bancos/<?php echo $data->fields["banco4"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                     </div>
                                 <?php } ?>
 
                                 <div class="col">
 
-                                    <img src="access/img/bancos/logo-sistecredito.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    <img src="access/img/bancos/logo-sistecredito.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
 
                                 <div class="col">
 
-                                    <img src="access/img/bancos/logo-openpay.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    <img src="access/img/bancos/logo-openpay.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
 
@@ -616,21 +628,21 @@ class recibo
                             <?php if ($data->fields["banco1"] > 0) { ?>
                                 <div class="col">
 
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="access/img/bancos/<?php echo $data->fields["banco1"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="access/img/bancos/<?php echo $data->fields["banco1"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
                             <?php } ?>
                             <?php if ($data->fields["banco2"] > 0) { ?>
                                 <div class="col">
 
-                                    <img src="access/img/bancos/<?php echo $data->fields["banco2"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    <img src="access/img/bancos/<?php echo $data->fields["banco2"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
                             <?php } ?>
                             <?php if ($data->fields["banco3"] > 0) { ?>
                                 <div class="col">
 
-                                    <img src="access/img/bancos/<?php echo $data->fields["banco3"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    <img src="access/img/bancos/<?php echo $data->fields["banco3"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
                             <?php } ?>
@@ -638,20 +650,20 @@ class recibo
                             <?php if ($data->fields["banco4"] > 0) { ?>
                                 <div class="col">
 
-                                    <img src="access/img/bancos/<?php echo $data->fields["banco4"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    <img src="access/img/bancos/<?php echo $data->fields["banco4"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
                             <?php } ?>
 
                             <div class="col">
 
-                                <img src="access/img/bancos/logo-sistecredito.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                <img src="access/img/bancos/logo-sistecredito.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                             </div>
 
                             <div class="col">
 
-                                <img src="access/img/bancos/logo-openpay.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                <img src="access/img/bancos/logo-openpay.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                             </div>
 
@@ -797,27 +809,27 @@ class recibo
                         <div class="row align-items-center">
                             <div class="col">
 
-                                <img src="assets/img/logo.png" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                <img src="assets/img/logo.png" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                             </div>
                             <?php if ($data->fields["banco1"] > 0) { ?>
                                 <div class="col">
 
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="access/img/bancos/<?php echo $data->fields["banco1"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="access/img/bancos/<?php echo $data->fields["banco1"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
                             <?php } ?>
                             <?php if ($data->fields["banco2"] > 0) { ?>
                                 <div class="col">
 
-                                    <img src="access/img/bancos/<?php echo $data->fields["banco2"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    <img src="access/img/bancos/<?php echo $data->fields["banco2"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
                             <?php } ?>
                             <?php if ($data->fields["banco3"] > 0) { ?>
                                 <div class="col">
 
-                                    <img src="access/img/bancos/<?php echo $data->fields["banco3"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    <img src="access/img/bancos/<?php echo $data->fields["banco3"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
                             <?php } ?>
@@ -825,20 +837,20 @@ class recibo
                             <?php if ($data->fields["banco4"] > 0) { ?>
                                 <div class="col">
 
-                                    <img src="access/img/bancos/<?php echo $data->fields["banco4"] ?>foto.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                    <img src="access/img/bancos/<?php echo $data->fields["banco4"] ?>foto.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                                 </div>
                             <?php } ?>
 
                             <div class="col">
 
-                                <img src="access/img/bancos/logo-sistecredito.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                <img src="access/img/bancos/logo-sistecredito.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                             </div>
 
                             <div class="col">
 
-                                <img src="access/img/bancos/logo-openpay.jpg" class="img-fluid" style="max-width: 150px;" data-holder-rendered="true" />
+                                <img src="access/img/bancos/logo-openpay.jpg" class="img-fluid logo-bank"  data-holder-rendered="true" />
 
                             </div>
 
