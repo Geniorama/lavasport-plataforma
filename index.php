@@ -80,6 +80,11 @@ $config =  $db->Execute($sql1);
         right: 10px;
       }
     }
+
+    .formLog .checkbox input[type="checkbox"]:checked+label a{
+      color: white !important;
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -90,6 +95,7 @@ $config =  $db->Execute($sql1);
         <img src="assets/img/logo.png" class="img-fluid logo" alt="Responsive image">
         <h2 class="tituLog">SERVICIO INSTITUCIONAL <br> ESMIC <span>/</span> EMSUB</h2>
         <form class="formLog" id="formulario1" action="datos.php" method="POST">
+          <p>Los campos con asterisco (<span style="color: red">*</span>) son obligatorios:</p>
           <div class="form-group">
             <input autofocus type="number" name="documento" id="documento" min="0" max="9" onKeyPress="return validarNumero(event)" maxlength="11" class="form-control inp1" placeholder="Documento de identidad*">
           </div>
@@ -98,19 +104,19 @@ $config =  $db->Execute($sql1);
           </div> -->
           <div class="checkbox">
             <input type="checkbox" name="checkbox" id="checkbox1">
-            <label for="checkbox1">He leído y aceptado el <a target="_blank" href="contrato-prestacion-servicio_v03_12_2024.pdf">Contrato De Prestación De Servicios</a></label>
+            <label for="checkbox1">He leído y aceptado el <a target="_blank" href="contrato-prestacion-servicio_v03_12_2024.pdf">Contrato de Prestación de Servicios</a> <span style="color: red">*</span></label>
           </div>
           <div class="checkbox">
             <input type="checkbox" name="checkbox2" id="checkbox2">
-            <label for="checkbox2">He leído y aceptado las <a target="_blank" href="tratamiento-datos.pdf">Politicas de Tratamiento De Datos</a></label>
+            <label for="checkbox2">He leído y aceptado las <a target="_blank" href="tratamiento-datos.pdf">Políticas de Tratamiento de Datos</a> <span style="color: red">*</span></label>
           </div>
           <div class="checkbox">
             <input type="checkbox" name="checkbox3" id="checkbox3">
-            <label for="checkbox3">Acepto el <a target="_blank" href="terminos_y_garantias_sept_2024.pdf">Procedimiento garantía de servicio LavaSport S.A.S</a></label>
+            <label for="checkbox3">Acepto el <a target="_blank" href="terminos_y_garantias_sept_2024.pdf">Procedimiento Garantía de Servicio LavaSport S.A.S</a> <span style="color: red">*</span></label>
           </div>
           <div class="checkbox">
             <input type="checkbox" name="checkbox4" id="checkbox4">
-            <label for="checkbox4">Acepto el <a target="_blank" href="contrato-prestacion-servicio_alianza_sistecredito_v03_12_2024.pdf">Contrato de prestación de servicios Alianza Sistecredito</a></label>
+            <label for="checkbox4">Acepto el <a target="_blank" href="contrato-prestacion-servicio_alianza_sistecredito_v03_12_2024.pdf">Contrato de Prestación de Servicios Alianza Sistecrédito</a> <span style="color: red">*</span></label>
           </div>
           <button type="button" onclick="verificarcheck()" id="botonfactura" class="btn btnlog">Continuar</button>
         </form>

@@ -132,7 +132,7 @@ $db->SetFetchMode(ADODB_FETCH_ASSOC);
         <div class="col-sm-4">
           <div class="form-group">
             <label for="form_name">Primer Apellido Alumno / Cliente*</label>
-            <input id="apellido1" type="text" name="apellido1" value="<?php echo $verificardatos1->fields["apellido1"]; ?>" class="form-control" placeholder="Ingrese el Pimer Apellido *" required="required" data-error="Primer Apellido Rquerido.">
+            <input id="apellido1" type="text" name="apellido1" value="<?php echo $verificardatos1->fields["apellido1"]; ?>" class="form-control" placeholder="Ingrese el Primer Apellido *" required="required" data-error="Primer Apellido Rquerido.">
             <div class="help-block with-errors"></div>
           </div>
         </div>
@@ -156,15 +156,15 @@ $db->SetFetchMode(ADODB_FETCH_ASSOC);
 
         <div class="col-sm-6">
           <div class="form-group">
-            <label for="form_email">Email Alumno / Cliente*</label>
-            <input id="correo" type="email" name="correo" class="form-control" value="<?php echo $verificardatos1->fields["correo"]; ?>" placeholder="Ingrese el Correo Electronico *" required="required" data-error="El Correo Electronico es requerido">
+            <label for="form_email">Correo Electrónico Alumno / Cliente*</label>
+            <input id="correo" type="email" name="correo" class="form-control" value="<?php echo $verificardatos1->fields["correo"]; ?>" placeholder="Ingrese el Correo Electrónico *" required="required" data-error="El Correo Electronico es requerido">
             <div class="help-block with-errors"></div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="form-group">
             <label for="form_phone">Teléfono Alumno / Cliente</label>
-            <input id="telefono" type="tel" name="telefono" value="<?php echo $verificardatos1->fields["telefono"]; ?>" class="form-control" placeholder="Ingrese El Telefono *" required="required" data-error="El Telefono  es requerido">
+            <input id="telefono" type="tel" name="telefono" value="<?php echo $verificardatos1->fields["telefono"]; ?>" class="form-control" placeholder="Ingrese el Teléfono *" required="required" data-error="El Telefono  es requerido">
             <div class="help-block with-errors"></div>
           </div>
         </div>
@@ -180,22 +180,22 @@ $db->SetFetchMode(ADODB_FETCH_ASSOC);
       <div class="row" id="racud1">
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="form_email">Documento del Acudiente/Codeudor *</label>
+            <label for="form_email">Documento del Acudiente / Codeudor *</label>
             <input id="docacudiente" type="text" name="docacudiente" value="<?php echo $verificardatos1->fields["docacudiente"]; ?>" required="required" class="form-control" placeholder="Ingrese el Documento del Acudiente ">
             <div class="help-block with-errors"></div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="form_phone">Acudiente/Codeudor Primer Apellido</label>
-            <input id="apellidoacudiente" type="text" name="apellidoacudiente" value="<?php echo $verificardatos1->fields["apellidoacudiente"]; ?>" required="required" class="form-control" placeholder="Ingrese El Apellido Del Acudiente *">
+            <label for="form_phone">Acudiente / Codeudor Primer Apellido</label>
+            <input id="apellidoacudiente" type="text" name="apellidoacudiente" value="<?php echo $verificardatos1->fields["apellidoacudiente"]; ?>" required="required" class="form-control" placeholder="Ingrese el Apellido del Acudiente *">
             <div class="help-block with-errors"></div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="form_phone">Acudiente/Codeudor Segundo Apellido</label>
-            <input id="apellido2acudiente" type="text" name="apellido2acudiente" value="<?php echo $verificardatos1->fields["apellido2acudiente"]; ?>" required="required" class="form-control" placeholder="Ingrese El Apellido Del Acudiente *">
+            <label for="form_phone">Acudiente / Codeudor Segundo Apellido</label>
+            <input id="apellido2acudiente" type="text" name="apellido2acudiente" value="<?php echo $verificardatos1->fields["apellido2acudiente"]; ?>" required="required" class="form-control" placeholder="Ingrese el Apellido del Acudiente *">
             <div class="help-block with-errors"></div>
           </div>
         </div>
@@ -204,22 +204,22 @@ $db->SetFetchMode(ADODB_FETCH_ASSOC);
 
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="form_email">Nombres del Acudiente/Codeudor *</label>
+            <label for="form_email">Nombres del Acudiente / Codeudor *</label>
             <input id="nombresacudiente" type="text" name="nombresacudiente" value="<?php echo $verificardatos1->fields["nombresacudiente"]; ?>" required="required" class="form-control" placeholder="Nombres del Acudiente">
             <div class="help-block with-errors"></div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="form_phone">Correo Electronico del Acudiente/Codeudor *</label>
-            <input id="correoacudiente" type="email" name="correoacudiente" value="<?php echo $verificardatos1->fields["correoacudiente"]; ?>" required="required" class="form-control" placeholder="Ingrese El Correo Electronico *">
+            <label for="form_phone">Correo Electrónico del Acudiente / Codeudor *</label>
+            <input id="correoacudiente" type="email" name="correoacudiente" value="<?php echo $verificardatos1->fields["correoacudiente"]; ?>" required="required" class="form-control" placeholder="Ingrese el Correo Electrónico *">
             <div class="help-block with-errors"></div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="form_phone">Celular del Acudiente/Codeudor</label>
-            <input id="numeroacudiente" type="tel" name="numeroacudiente" value="<?php echo $verificardatos1->fields["numeroacudiente"]; ?>" required="required" class="form-control" placeholder="Ingrese El Numero Celular del Acudiente *">
+            <label for="form_phone">Celular del Acudiente / Codeudor</label>
+            <input id="numeroacudiente" type="tel" name="numeroacudiente" value="<?php echo $verificardatos1->fields["numeroacudiente"]; ?>" required="required" class="form-control" placeholder="Ingrese el Número Celular del Acudiente *">
             <div class="help-block with-errors"></div>
           </div>
         </div>
@@ -425,7 +425,7 @@ $db->SetFetchMode(ADODB_FETCH_ASSOC);
     <?php
     if (isset($_GET["error"]) && $_GET["error"] == 3) {
 
-      echo "alert('No Se Encuentra Recibos Relacionados - Por Favor Intentarlo Con El Numero De Cedula o Tarjeta De Identidad-Cualquier Duda o Inquietud Con Gusto Sera Atendida Cel.3208356823 Tel.2158573')";
+      echo "alert('No Se Encuentra Recibos Relacionados - Por Favor Intentarlo Con El Número De Cédula o Tarjeta De Identidad-Cualquier Duda o Inquietud Con Gusto Sera Atendida Cel.3208356823 Tel.2158573')";
     }
     if (isset($_GET["error"]) && $_GET["error"] == 4) {
 
