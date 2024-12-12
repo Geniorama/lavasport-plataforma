@@ -98,7 +98,7 @@ $config =  $db->Execute($sql1);
           </div> -->
           <div class="checkbox">
             <input type="checkbox" name="checkbox" id="checkbox1">
-            <label for="checkbox1">He leído y aceptado el <a target="_blank" href="contrato-prestacion-servicio.pdf">Contrato De Prestación De Servicios</a></label>
+            <label for="checkbox1">He leído y aceptado el <a target="_blank" href="contrato-prestacion-servicio_v03_12_2024.pdf">Contrato De Prestación De Servicios</a></label>
           </div>
           <div class="checkbox">
             <input type="checkbox" name="checkbox2" id="checkbox2">
@@ -106,11 +106,11 @@ $config =  $db->Execute($sql1);
           </div>
           <div class="checkbox">
             <input type="checkbox" name="checkbox3" id="checkbox3">
-            <label for="checkbox3">Acepto el <a target="_blank" href="tratamiento-datos.pdf">Procedimiento garantía de servicio LavaSport S.A.S</a></label>
+            <label for="checkbox3">Acepto el <a target="_blank" href="terminos_y_garantias_sept_2024.pdf">Procedimiento garantía de servicio LavaSport S.A.S</a></label>
           </div>
           <div class="checkbox">
             <input type="checkbox" name="checkbox4" id="checkbox4">
-            <label for="checkbox4">Acepto el <a target="_blank" href="tratamiento-datos.pdf">Contrato de prestación de servicios Alianza Sistecredito</a></label>
+            <label for="checkbox4">Acepto el <a target="_blank" href="contrato-prestacion-servicio_alianza_sistecredito_v03_12_2024.pdf">Contrato de prestación de servicios Alianza Sistecredito</a></label>
           </div>
           <button type="button" onclick="verificarcheck()" id="botonfactura" class="btn btnlog">Continuar</button>
         </form>
