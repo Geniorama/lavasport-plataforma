@@ -16,12 +16,12 @@
       </div>
       <h2 class="text-center my-sm-5 my-4 fs-4">ESCOJA UNA OPCION DE PAGO</h2>
         <nav class="container mt-sm-5 mt-2">
-          <div class="nav justify-content-center" id="nav-tab" role="tablist">
+          <div class="nav justify-content-center align-items-start" id="nav-tab" role="tablist">
             <button class="col-sm-2 col-12 mb-sm-4 mb-0 border-0 bg-transparent nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
               <div class="text-bg-light mb-3 p-3 w-100 text-center border borderAzul  border-dark-subtle rounded" >
                 <img src="img/iconsLS-01.svg" class="img-fluig tTcon">
               </div>
-              <h3 class="fs-5 text-center text-secondary">Tarjeta</h3>
+              <h3 class="fs-5 text-center text-secondary">Tarjeta Débito/Crédito</h3>
             </button>
          <!--   <button class="col-sm-2 col-12 mb-sm-4 mb-0 border-0 bg-transparent nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
               <div class="text-bg-light mb-3 p-3 w-100 text-center border borderAzul  border-dark-subtle rounded" >
@@ -29,12 +29,12 @@
             </div>
             <h3 class="fs-5 text-center text-secondary">PSE</h3>
             </button> -->
-	<button class="col-sm-2 col-12 mb-sm-4 mb-0 border-0 bg-transparent nav-link" id="nav-profile-tab" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="window.location.href='https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=8956';">
-  <div class="text-bg-light mb-3 p-3 w-100 text-center border borderAzul border-dark-subtle rounded" >
-    <img src="img/iconsLS-02.svg" class="img-fluig tTcon">
-  </div>
-  <h3 class="fs-5 text-center text-secondary">PSE</h3>
-</button>
+            <button class="col-sm-2 col-12 mb-sm-4 mb-0 border-0 bg-transparent nav-link" id="nav-profile-tab" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="window.location.href='https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=8956';">
+            <div class="text-bg-light mb-3 p-3 w-100 text-center border borderAzul border-dark-subtle rounded" >
+              <img src="img/iconsLS-02.svg" class="img-fluig tTcon">
+            </div>
+            <h3 class="fs-5 text-center text-secondary">PSE</h3>
+          </button>
 
             <button class="col-sm-2 col-12 mb-sm-4 mb-0 border-0 bg-transparent nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
               <div class="text-bg-light mb-3 p-3 w-100 text-center border borderAzul border-dark-subtle rounded" >

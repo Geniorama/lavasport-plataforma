@@ -122,6 +122,10 @@ class recibo
 
             }
 
+            .address{
+                text-transform: capitalize;
+            }
+
             /* input[type=checkbox] {
                 transform: scale(2.5);
             } */
