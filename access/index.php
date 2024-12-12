@@ -63,6 +63,7 @@ if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) {
 } else {
     ob_start();
 }
+
 include_once('controller/' . MODULO . 'Controller.php');
 eval('$a = new ' . MODULO . 'Controller();');
 $a->valor = $valor;
