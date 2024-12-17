@@ -104,11 +104,11 @@ $config =  $db->Execute($sql1);
           </div> -->
           <div class="checkbox">
             <input type="checkbox" name="checkbox" id="checkbox1">
-            <label for="checkbox1">He leído y aceptado el <a target="_blank" href="contrato-prestacion-servicio_v03_12_2024.pdf">Contrato de Prestación de Servicios</a> <span style="color: red">*</span></label>
+            <label for="checkbox1">He leído y aceptado el <a target="_blank" href="contrato-prestacion-servicio_v03_12_2024.pdf">Contrato de Prestación de Servicio LavaSport con Usuario / Alumno</a> <span style="color: red">*</span></label>
           </div>
           <div class="checkbox">
             <input type="checkbox" name="checkbox2" id="checkbox2">
-            <label for="checkbox2">He leído y aceptado las <a target="_blank" href="tratamiento-datos.pdf">Políticas de Tratamiento de Datos</a> <span style="color: red">*</span></label>
+            <label for="checkbox2">He leído y aceptado la <a target="_blank" href="tratamiento-datos.pdf">Política de Tratamiento de Datos</a> <span style="color: red">*</span></label>
           </div>
           <div class="checkbox">
             <input type="checkbox" name="checkbox3" id="checkbox3">
@@ -116,7 +116,7 @@ $config =  $db->Execute($sql1);
           </div>
           <div class="checkbox">
             <input type="checkbox" name="checkbox4" id="checkbox4">
-            <label for="checkbox4">Acepto el <a target="_blank" href="contrato-prestacion-servicio_alianza_sistecredito_v03_12_2024.pdf">Contrato de Prestación de Servicios Alianza Sistecrédito</a> <span style="color: red">*</span></label>
+            <label for="checkbox4">Acepto el <a target="_blank" href="contrato-prestacion-servicio_alianza_sistecredito_v03_12_2024.pdf">Contrato de Prestación de Servicios Alianza Sistecrédito</a></label>
           </div>
           <button type="button" onclick="verificarcheck()" id="botonfactura" class="btn btnlog">Continuar</button>
         </form>
@@ -236,12 +236,12 @@ $config =  $db->Execute($sql1);
     function verificarcheck() {
 
       if ($("#documento").val() != "") {
-        if ($('#checkbox1').prop('checked') && $('#checkbox2').prop('checked') && $('#checkbox3').prop('checked') && $('#checkbox4').prop('checked')) {
+        if ($('#checkbox1').prop('checked') && $('#checkbox2').prop('checked') && $('#checkbox3').prop('checked')) {
 
           document.getElementById('formulario1').submit();
         } else {
 
-          alert("Es necesario aceptar todos los campos para continuar.");
+          alert("Es necesario aceptar todos los campos marcados con (*) para continuar.");
         }
 
       } else {
